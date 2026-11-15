@@ -25,3 +25,13 @@ Produkční HTTPS náhled na Vercelu zatím nebyl nasazen; připojení nebylo k 
 - Znovu prošel celý průzkum všech 36 světel a tří svatyní včetně ukládání.
 - Zostavení TypeScript + Vite uspělo. Upozornění na velikost sdíleného Three.js chunku trvá; není chybou sestavení.
 - Nadále jde o Chromium a simulované dotyky; fyzické telefony ani Safari nebyly testovány. Není to potvrzení 60 FPS na zařízení.
+
+## Verze 4.0.0 — Probuzení ostrova
+
+- TypeScript + Vite: úspěšný produkční build.
+- Kompletní sada portrétových vstupů a simulovaného multitouch, původní ovládání, pauza, reštart, porážka a celý průzkum 36 světel / 3 svatyní: prošlo.
+- Běh Dobrodružství dokončen na 2220 m se 3 životy, 4 odrazy bosse a 3 použitými houbami; všechny 4 příběhové spouštěče aktivovány.
+- Pořízeny snímky mořského poutníka, mostů, krystalové oblasti a bossova úseku. Nové modely používají pevný počet objektů.
+- Fyzický iPhone, Android, Safari ani 60 FPS na nich nejsou ověřeny. Simulovaný čas není benchmark. Bez nových externích závislostí.
+- Samostatně prošly celé běhy a cílené prohry na úrovních Pohoda, Dobrodružství i Výzva; v každém vítězném běhu 4 odrazy a 3 použité houby.
+- Dodatečný cílený běh ověřil aktivaci mechanismu mostu impulzem (`bridgeAwake: true`) a následnou záchranu bosse.

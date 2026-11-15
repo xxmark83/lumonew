@@ -1,4 +1,4 @@
-# LUMO — Ztracené ostrovy · 3.0.0
+# LUMO — Ztracené ostrovy · 4.0.0
 
 Hratelná česká 3D hra pro mobil i počítač. TypeScript, Vite, Three.js, bez účtů, backendu a API klíčů.
 
@@ -24,11 +24,11 @@ Hlavní režim je svižný automatický běh ve třech dráhách s kamerou za po
 
 | Obtížnost | Rychlost | Životy | Rozestup řad | Obnova impulzu |
 |---|---|---|---|---|
-| Pohoda | 9,5–11 m/s | 5 | 30 m | 2,4 s |
-| Dobrodružství | 10,5–12,5 m/s | 3 | 22 m | 3,2 s |
-| Výzva | 12–14 m/s | 2 | 18 m | 4 s |
+| Pohoda | 12–14 m/s | 5 | 30 m | 2,4 s |
+| Dobrodružství | 14–16 m/s | 3 | 22 m | 3,2 s |
+| Výzva | 16–18 m/s | 2 | 18 m | 4 s |
 
-Úvodní řady mají na všech úrovních 32 m odstup. Kombinace se dvěma překážkami přibývají u střední a vysoké obtížnosti, vždy zůstává volná dráha. Celý běh trvá přibližně 2:10–2:45 podle úrovně. Obtížnost i její rekord se ukládají odděleně. Bedny s modrou značkou lze rozbít impulzem do 9 m (+2 světla), nebo se jim vyhnout. Sbírání bez zásahu tvoří sérii; zásah ji vynuluje. Při bossových střelách se zobrazí cílová dráha.
+Úvodní řady mají na všech úrovních 32 m odstup. Kombinace se dvěma překážkami přibývají u střední a vysoké obtížnosti, vždy zůstává volná dráha. Celý běh trvá přibližně 2:05–2:45 podle úrovně. Obtížnost i její rekord se ukládají odděleně. Bedny s modrou značkou lze rozbít impulzem do 9 m (+2 světla), nebo se jim vyhnout. Sbírání bez zásahu tvoří sérii; zásah ji vynuluje. Při bossových střelách se zobrazí cílová dráha.
 
 Nová paleta: jantárový hrdina v modrém obleku s korálovou šálou, písečné pobřeží, lososové koruny stromů, tyrkysová voda, dřevěné mosty, fialové soutěsky a teplé kamenné ruiny. Každý průzkumný ostrov má odlišnou barvu povrchu i vegetace.
 
@@ -44,7 +44,7 @@ Odkaz v menu nebo `?mode=explore`. Čtyři volně přístupné ostrovy s mosty: 
 
 ## Dobrodružný běh (hlavní režim)
 
-Výchozí režim při otevření hry; také `?mode=runner`. Trať 1740 metrů, asi 155 sekund: háj, mosty, kořenový tunel a útěk před mechanickým strážcem. Počet životů podle obtížnosti, postupné zrychlování, skóre a rekord.
+Výchozí režim při otevření hry; také `?mode=runner`. Trať 2220 metrů, přibližně 2–3 minuty: háj, mosty, kořenový tunel a útěk před mechanickým strážcem. Počet životů podle obtížnosti, postupné zrychlování, skóre a rekord.
 
 Gesta do stran přepínají dráhy, nahoru skok, dolů skluz. Tlačítko ✦ nebo mezerník aktivuje impulz. Na počítači šipky / WASD. Impulz odráží oranžové střely a probouzí mátové mechanismy do 22 m. Nízké kmeny přeskočte, vysoké brány podklouzněte, skály obejděte.
 
@@ -73,3 +73,16 @@ Volitelně `PLAYWRIGHT_CHROMIUM_PATH` určuje existující prohlížeč. Testy p
 Jde o procedurálně vytvořený prototyp, nikoli velký otevřený svět. Nový průzkum nemá boj, inventář předmětů, NPC dialogy ani rozsáhlý příběh. Boss zůstává v závodním režimu. Výškový pohyb v průzkumu tvoří skok; povrch ostrovů je plochý. Modely nejsou profesionálně rigované a zvuk zatím nemá hudební soundtrack. Není cloudové ukládání. Fyzický iPhone/Android a Safari nebyly testovány; 60 FPS na nich nelze garantovat. Fonty Google Fonts mají systémový fallback. Procedurální assety a licence jsou v ASSETS.md.
 
 `npm run test:levels` projde všechny tři obtížnosti od startu po výsledek. Testy jsou v Chromiu se simulovaným časem; nenahrazují kontrolu na fyzickém telefonu.
+
+## 4.0.0 — Probuzení ostrova
+
+Úsporný upgrade s rychlejším během (Pohoda 12–14, Dobrodružství 14–16, Výzva 16–18 m/s). Trať má nyní 2220 m, aby vyšší rychlost nezkrátila dobrodružství pod dvě minuty.
+
+- Obří mořský poutník se vznáší nad mosty. Ruiny se před hráčem skládají do průjezdné cesty; blízký mechanismus lze nabít impulzem pro bonus +10 a změnu barvy mostu. Cesta je vždy bezpečně hotová před příchodem hráče.
+- Krystalové formace a změna atmosféry v jeskynním úseku.
+- Růžové skokanské houby ve střední dráze automaticky odrazí hráče do výšky; lze se jim vyhnout. Přidají dvě světla a navazují na ně řady energie.
+- Tři odražené bossovy střely rozbijí jeho pancíř. Závěr rozlišuje záchranu strážce a prosté dokončení běhu. Není nutné odrážet střely pro výhru; lze jim uhnout.
+- Lehká syntetická hudební smyčka s rychlejším rytmem u bosse, pohyb šály, náklony a drobné odpružení běhu. Zvuk až po interakci; společné ztišení. Jemná vibrace jen tam, kde ji prohlížeč podporuje.
+- Dokončený běh uloží probuzení ostrova. Průzkum potom nabídne světlejší nasvícení a uvítání po návratu. Jde o drobnou persistentní změnu; neslibuje přestavbu celého světa.
+
+Záměrně bez velkých textur, náročného postprocessingu a nových externích závislostí. Nové scény jsou procedurální a modely zůstávají stylizované. Tato verze nepřidává větvení tratě ani jízdu po kořenech. Dosavadní sekce omezení a kontrola na fyzických telefonech nadále platí.
