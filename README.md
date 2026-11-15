@@ -1,4 +1,4 @@
-# LUMO — Ztracené ostrovy · 5.0.0
+# LUMO — Ztracené ostrovy · 5.1.0
 
 Hratelná česká 3D hra pro mobil i počítač. TypeScript, Vite, Three.js, bez účtů, backendu a API klíčů.
 
@@ -74,7 +74,7 @@ Jde o procedurálně vytvořený prototyp, nikoli velký otevřený svět. Nový
 
 `npm run test:levels` projde všechny tři obtížnosti od startu po výsledek. Testy jsou v Chromiu se simulovaným časem; nenahrazují kontrolu na fyzickém telefonu.
 
-## 5.0.0 — Probuzení ostrova
+## 5.1.0 — Probuzení ostrova
 
 Úsporný upgrade s rychlejším během (Pohoda 12–14, Dobrodružství 14–16, Výzva 16–18 m/s). Trať má nyní 2220 m, aby vyšší rychlost nezkrátila dobrodružství pod dvě minuty.
 
@@ -87,7 +87,7 @@ Jde o procedurálně vytvořený prototyp, nikoli velký otevřený svět. Nový
 
 Záměrně bez velkých textur, náročného postprocessingu a nových externích závislostí. Nové scény jsou procedurální a modely zůstávají stylizované. Tato verze nepřidává větvení tratě ani jízdu po kořenech. Dosavadní sekce omezení a kontrola na fyzických telefonech nadále platí.
 
-## Finální doladění 5.0.0
+## Finální doladění 5.1.0
 
 Každá dokončená série 25 světel nabije jeden ochranný štít. Štíty se nesčítají. Štít zachytí jeden zásah bez ztráty života; série se přeruší a štít zanikne. HUD ukazuje jeho stav a postavu obklopí jemná modrá síť.
 
@@ -96,7 +96,7 @@ Výsledek nabízí přehled skóre, světel, série a odrazů. Zlato získá hr�
 Nízké překážky mají světlou značku pro skok; průchozí brány modrý panel se šipkou dolů. Ztráta fokusu okna automaticky pozastaví běh. `node shield-check.mjs` kontroluje získání štítu, zachycení zásahu a restart (vyžaduje běžící lokální server a Playwright prohlížeč).
 
 
-## 5.0.0 — přepracovaný Level 1
+## 5.1.0 — přepracovaný Level 1
 
 Stále jde o jediný Level 1, nikoli další svět. Běh má 2220 m a zachovává tři obtížnosti i původní rychlé tempo.
 
@@ -107,3 +107,12 @@ Stále jde o jediný Level 1, nikoli další svět. Běh má 2220 m a zachováv�
 - Dvě ručně sestavené sekvence v úsecích 1180–1310 m a 1680–1835 m: řetězec beden, kombinace hlídačů, skoků a skluzů. U každé řady zůstává průchozí dráha. Ostatní část zachovává stupňování podle obtížnosti.
 
 Výtvarné i herní prvky jsou původní. Referenční hra určuje žánr a tempo; její postavy, modely a tratě se nepřebírají. Nová geometrie a dvě malé procedurální textury vznikají přímo v prohlížeči. Fyzický mobil a Safari stále nejsou ověřeny.
+
+
+## 5.1.0 — plynulá scenérie a zakřivený terén
+
+Opravené recyklování tratě: každý díl má stabilní pozici na ostrově, během běhu projede za postavu a teprve za kamerou se přesune daleko dopředu. Dřívější verze při přechodu osmimetrové hranice přepočítala všechny díly současně a vytvořila dojem stromů uskakujících před hráče.
+
+Trať má výraznější boční zákruty a kopce. Jedna společná funkce určuje pozici cesty, sklon segmentů, překážky i směr postavy. Kamera sleduje tečnu a výšku cesty s plynulým tlumením. Jemnější pohyb omezuje změny náklonu pohledu. Palmy na blízkých úsecích zůstávají součástí ubíhajícího ostrova; vzdálený horizont tvoří skály.
+
+`npm run test:scenery` projde celou trať a kontroluje směr pohybu jednotlivých dílů, jejich recyklování až za kamerou a viditelnost všech tří drah 28 m vpřed. Lze spustit s `LUMO_LEVEL=hard` pro nejvyšší rychlost. Jde o kontrolu projekce do obrazu, nikoli plnohodnotnou kontrolu každého možného vizuálního zakrytí.

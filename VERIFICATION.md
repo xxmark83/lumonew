@@ -53,3 +53,12 @@ Produkční HTTPS náhled na Vercelu zatím nebyl nasazen; připojení nebylo k 
 - Vizuálně zkontrolován mobilní obraz s novým modelem a palmami; tři portrétové rozměry 320/390/430 px a desktop prošly kontrolou ovládání.
 - Nové horizontové objekty sloučeny podle materiálů. Znovu ověřen build a runtime po tomto sloučení.
 - Přetrvává limit: bez fyzického iPhonu/Androidu, Safari a bez garance mobilních 60 FPS.
+
+## Verze 5.1.0 — pohyb scenérie, zákruty a kopce
+
+- Reprodukce původní chyby v indexování: při každé nové osmimetrové buňce měnily stanici všechny segmenty současně. Nově má každý slot stabilní stanici až do projetí za kameru.
+- Celý Level 1 na Dobrodružství i Výzvě: 277 jednotlivých recyklací, žádný viditelný segment neskočil zpět dopředu; všechny tři dráhy zůstaly v obraze 28 m vpřed.
+- Ověřená změna směru až přibližně 18 stupňů a celkové rozpětí výšek asi 14,2 m. Jde o relativní herní rozměry, nikoli novou rychlost nebo délku levelu.
+- Kompletní regresní sada ovládání, úderu, štítu, běhu, bossových odrazů, restartu a průzkumu prošla po změně terénu.
+- Snímky portrétového obrazu zkontrolovány. Automatická projekce drah neprokazuje absenci každého možného zakrytí objektem. Fyzické telefony a Safari nadále neověřeny.
+- Produkční TypeScript/Vite build prošel.

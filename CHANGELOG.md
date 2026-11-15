@@ -1,3 +1,10 @@
+# LUMO 5.1.0 — scenérie a terén
+
+- Oprava stromů uskakujících dopředu při recyklaci úseků.
+- Výraznější zákruty, kopce a navazující sklon silnice.
+- Tlumená kamera podle směru a výšky cesty.
+- Celotraťový test viditelnosti drah a pohybu scenérie.
+
 # LUMO 5.0.0 — Level 1
 
 - Nový model postavy, palmy, pobřežní skály, texturovaný písek a měkký stín.
