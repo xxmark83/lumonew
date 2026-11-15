@@ -1,3 +1,10 @@
+# LUMO 4.1.0 — Finální doladění
+
+- Ochranný štít za sérii 25 světel, jeden zachycený zásah.
+- Výsledkové medaile a přehled statistik.
+- Rozlišení skokových překážek a bran značkami a barvou.
+- Automatická pauza při ztrátě fokusu.
+
 # LUMO 4.0.0 — Probuzení ostrova
 
 - Rychlejší běh na všech třech obtížnostech, prodloužená trať 2220 m.

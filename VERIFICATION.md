@@ -35,3 +35,11 @@ Produkční HTTPS náhled na Vercelu zatím nebyl nasazen; připojení nebylo k 
 - Fyzický iPhone, Android, Safari ani 60 FPS na nich nejsou ověřeny. Simulovaný čas není benchmark. Bez nových externích závislostí.
 - Samostatně prošly celé běhy a cílené prohry na úrovních Pohoda, Dobrodružství i Výzva; v každém vítězném běhu 4 odrazy a 3 použité houby.
 - Dodatečný cílený běh ověřil aktivaci mechanismu mostu impulzem (`bridgeAwake: true`) a následnou záchranu bosse.
+
+## Verze 4.1.0 — finální doladění
+
+- Produkční build TypeScript/Vite prošel.
+- Cílený test běžnými vstupy: štít získán za sérii, zásah zachycen bez ztráty životů, počet použitých štítů zvýšen, restart štít i počítadlo obnovil.
+- Kompletní dosavadní sada testů prošla: portrétová rozhraní a ovládání, celý běh se záchranou strážce, aktivace mostu, houby, porážka a restart, celý průzkum a lokální ukládání.
+- Výsledková obrazovka obsahuje medaili a čtyři přehledné statistiky.
+- Bez nových závislostí. Nadále nebyl proveden test na fyzickém telefonu ani garance 60 FPS.

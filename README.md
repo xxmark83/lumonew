@@ -1,4 +1,4 @@
-# LUMO — Ztracené ostrovy · 4.0.0
+# LUMO — Ztracené ostrovy · 4.1.0
 
 Hratelná česká 3D hra pro mobil i počítač. TypeScript, Vite, Three.js, bez účtů, backendu a API klíčů.
 
@@ -74,7 +74,7 @@ Jde o procedurálně vytvořený prototyp, nikoli velký otevřený svět. Nový
 
 `npm run test:levels` projde všechny tři obtížnosti od startu po výsledek. Testy jsou v Chromiu se simulovaným časem; nenahrazují kontrolu na fyzickém telefonu.
 
-## 4.0.0 — Probuzení ostrova
+## 4.1.0 — Probuzení ostrova
 
 Úsporný upgrade s rychlejším během (Pohoda 12–14, Dobrodružství 14–16, Výzva 16–18 m/s). Trať má nyní 2220 m, aby vyšší rychlost nezkrátila dobrodružství pod dvě minuty.
 
@@ -86,3 +86,11 @@ Jde o procedurálně vytvořený prototyp, nikoli velký otevřený svět. Nový
 - Dokončený běh uloží probuzení ostrova. Průzkum potom nabídne světlejší nasvícení a uvítání po návratu. Jde o drobnou persistentní změnu; neslibuje přestavbu celého světa.
 
 Záměrně bez velkých textur, náročného postprocessingu a nových externích závislostí. Nové scény jsou procedurální a modely zůstávají stylizované. Tato verze nepřidává větvení tratě ani jízdu po kořenech. Dosavadní sekce omezení a kontrola na fyzických telefonech nadále platí.
+
+## Finální doladění 4.1.0
+
+Každá dokončená série 25 světel nabije jeden ochranný štít. Štíty se nesčítají. Štít zachytí jeden zásah bez ztráty života; série se přeruší a štít zanikne. HUD ukazuje jeho stav a postavu obklopí jemná modrá síť.
+
+Výsledek nabízí přehled skóre, světel, série a odrazů. Zlato získá hráč za dokončení bez ztráty životů a záchranu strážce (alespoň 3 odrazy), stříbro za záchranu nebo nejméně 2 zbývající životy, jinak bronz. Nejlepší medaile se ukládá zvlášť pro každou obtížnost.
+
+Nízké překážky mají světlou značku pro skok; průchozí brány modrý panel se šipkou dolů. Ztráta fokusu okna automaticky pozastaví běh. `node shield-check.mjs` kontroluje získání štítu, zachycení zásahu a restart (vyžaduje běžící lokální server a Playwright prohlížeč).
