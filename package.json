@@ -1,13 +1,13 @@
 {
   "name": "lumo-lost-islands",
-  "version": "4.1.0",
+  "version": "5.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "test": "node shield-check.mjs && node portrait-check.mjs && node check.mjs && node journey.mjs && node explore-check.mjs && node explore-journey.mjs",
+    "test": "node melee-check.mjs && node shield-check.mjs && node portrait-check.mjs && node check.mjs && node journey.mjs && node explore-check.mjs && node explore-journey.mjs",
     "test:levels": "node difficulty-journeys.mjs"
   },
   "dependencies": {

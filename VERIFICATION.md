@@ -43,3 +43,13 @@ Produkční HTTPS náhled na Vercelu zatím nebyl nasazen; připojení nebylo k 
 - Kompletní dosavadní sada testů prošla: portrétová rozhraní a ovládání, celý běh se záchranou strážce, aktivace mostu, houby, porážka a restart, celý průzkum a lokální ukládání.
 - Výsledková obrazovka obsahuje medaili a čtyři přehledné statistiky.
 - Bez nových závislostí. Nadále nebyl proveden test na fyzickém telefonu ani garance 60 FPS.
+
+## Verze 5.0.0 — přepracovaný Level 1
+
+- TypeScript + Vite build prošel.
+- Kompletní regresní sada prošla: štít, portrétové ovládání a simulovaný multitouch, původní impulz, celý běh, přehrání, prohra, průzkum všech světel a svatyní a persistence.
+- Všechny tři obtížnosti prošly od startu po výhru s novými ručně sestavenými sekvencemi; po čtyřech odrazech bosse. Houby: Pohoda 3, Dobrodružství 3, Výzva 2. Ověřena také prohra a reset na každé obtížnosti.
+- Cílený test nových funkcí běžnými vstupy: klepnutí rozbilo bednu, X zničilo hlídače, magnet aktivní, Level zůstává 1, bez JavaScript chyb.
+- Vizuálně zkontrolován mobilní obraz s novým modelem a palmami; tři portrétové rozměry 320/390/430 px a desktop prošly kontrolou ovládání.
+- Nové horizontové objekty sloučeny podle materiálů. Znovu ověřen build a runtime po tomto sloučení.
+- Přetrvává limit: bez fyzického iPhonu/Androidu, Safari a bez garance mobilních 60 FPS.

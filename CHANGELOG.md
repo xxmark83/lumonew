@@ -1,3 +1,11 @@
+# LUMO 5.0.0 — Level 1
+
+- Nový model postavy, palmy, pobřežní skály, texturovaný písek a měkký stín.
+- Úder na klepnutí / X, rozbíjení beden a mechanických hlídačů.
+- Magnet světla na 8 sekund.
+- Dvě ručně sestavené herní sekvence, původní tři obtížnosti.
+- Stále jediný Level 1.
+
 # LUMO 4.1.0 — Finální doladění
 
 - Ochranný štít za sérii 25 světel, jeden zachycený zásah.

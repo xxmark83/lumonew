@@ -1,4 +1,4 @@
-# LUMO — Ztracené ostrovy · 4.1.0
+# LUMO — Ztracené ostrovy · 5.0.0
 
 Hratelná česká 3D hra pro mobil i počítač. TypeScript, Vite, Three.js, bez účtů, backendu a API klíčů.
 
@@ -74,7 +74,7 @@ Jde o procedurálně vytvořený prototyp, nikoli velký otevřený svět. Nový
 
 `npm run test:levels` projde všechny tři obtížnosti od startu po výsledek. Testy jsou v Chromiu se simulovaným časem; nenahrazují kontrolu na fyzickém telefonu.
 
-## 4.1.0 — Probuzení ostrova
+## 5.0.0 — Probuzení ostrova
 
 Úsporný upgrade s rychlejším během (Pohoda 12–14, Dobrodružství 14–16, Výzva 16–18 m/s). Trať má nyní 2220 m, aby vyšší rychlost nezkrátila dobrodružství pod dvě minuty.
 
@@ -87,10 +87,23 @@ Jde o procedurálně vytvořený prototyp, nikoli velký otevřený svět. Nový
 
 Záměrně bez velkých textur, náročného postprocessingu a nových externích závislostí. Nové scény jsou procedurální a modely zůstávají stylizované. Tato verze nepřidává větvení tratě ani jízdu po kořenech. Dosavadní sekce omezení a kontrola na fyzických telefonech nadále platí.
 
-## Finální doladění 4.1.0
+## Finální doladění 5.0.0
 
 Každá dokončená série 25 světel nabije jeden ochranný štít. Štíty se nesčítají. Štít zachytí jeden zásah bez ztráty života; série se přeruší a štít zanikne. HUD ukazuje jeho stav a postavu obklopí jemná modrá síť.
 
 Výsledek nabízí přehled skóre, světel, série a odrazů. Zlato získá hráč za dokončení bez ztráty životů a záchranu strážce (alespoň 3 odrazy), stříbro za záchranu nebo nejméně 2 zbývající životy, jinak bronz. Nejlepší medaile se ukládá zvlášť pro každou obtížnost.
 
 Nízké překážky mají světlou značku pro skok; průchozí brány modrý panel se šipkou dolů. Ztráta fokusu okna automaticky pozastaví běh. `node shield-check.mjs` kontroluje získání štítu, zachycení zásahu a restart (vyžaduje běžící lokální server a Playwright prohlížeč).
+
+
+## 5.0.0 — přepracovaný Level 1
+
+Stále jde o jediný Level 1, nikoli další svět. Běh má 2220 m a zachovává tři obtížnosti i původní rychlé tempo.
+
+- Nový hladší originální model strážce s obličejem, vnitřky uší, podrážkami, rukavicí a samostatnými kloubovými pivoty. Palmy a široké listy nahrazují opakující se kulaté koruny. Pobřeží má vrstvené skály, nepravidelné nášlapy, jemnou procedurální texturu písku a měkký kontaktní stín postavy.
+- **Klepnutí na herní plochu / tlačítko ÚDER / X**: krátký rotační úder rukavicí v aktuální dráze, dosah 8 m a obnova 0,65 s. Rozbíjí bedny a vyřazuje mechanické hlídače (+3 světla). Gesta nadále mění dráhu, skáčou a spouštějí skluz.
+- Impulz zůstává samostatnou schopností proti střelám a pro mechanismy; lze jím také rozbíjet bedny. Tím se odlišuje načasování úderu od strategického použití impulzu.
+- Modrý magnet přitahuje světla ze všech drah do 7 m po dobu 8 sekund. Čas účinku je vidět v HUD.
+- Dvě ručně sestavené sekvence v úsecích 1180–1310 m a 1680–1835 m: řetězec beden, kombinace hlídačů, skoků a skluzů. U každé řady zůstává průchozí dráha. Ostatní část zachovává stupňování podle obtížnosti.
+
+Výtvarné i herní prvky jsou původní. Referenční hra určuje žánr a tempo; její postavy, modely a tratě se nepřebírají. Nová geometrie a dvě malé procedurální textury vznikají přímo v prohlížeči. Fyzický mobil a Safari stále nejsou ověřeny.
